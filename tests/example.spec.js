@@ -14,7 +14,10 @@ test('AI Test capability', async ({ page }) => {
 
   await page.goto("https://rahulshettyacademy.com/dropdownsPractise/")
   const blinkingText = await ai("Get blinkingText in the page",aiArgs)
-  expect(blinkingText).toEqual("London QA Meetup @Rahul Shetty - Limited Seats! Book Now!")
+  expect(blinkingText).toEqual("Free Access to InterviewQues/ResumeAssistance/Material")
+  const firstValue = await ai('Split ${blinkingText} with "/" and give 0th index value',aiArgs)
+  console.log(firstValue)
+  expect(firstValue).toEqual("Free Access to InterviewQues")
 
 
   
